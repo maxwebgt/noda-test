@@ -1,0 +1,28 @@
+.grid-images
+	background-color: #B3F95A
+	display: grid
+	grid-template-columns: minmax(0, 390px) minmax(0, 590px) minmax(0, 160px)
+	grid-auto-rows: 198px
+	grid-gap: 15px
+	margin-bottom: 15px
+	&__cell
+		background-color: #8AD191
+		font-size: 53px
+		line-height: 62px
+		position: relative
+		&:after
+			position: absolute
+			display: flex
+			top: 0
+			bottom: 0
+			left: 0
+			right: 0
+			align-items: center
+			justify-content: center
+		@for $i from 0 through 5
+			&:nth-child(#{$i})
+				&:after
+					content: '#{$i}'
+	&__four
+		grid-column-start: 1
+		grid-column-end: 3
